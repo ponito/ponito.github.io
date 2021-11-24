@@ -223,7 +223,8 @@ function View() {
     this.updateRobots = function() {
         document.getElementById('robots').innerHTML = game.robots.robots+"";
         document.getElementById('robotsFree').innerHTML = game.robots.robotsFree+"";
-        document.getElementById('robotMax').innerHTML = game.robots.robotMax+"";
+        document.getElementById('robotMax').innerHTML = game.robots.robotMax + "";
+        document.getElementById('totalMines').innerHTML = game.robots.mines + "";
         for(var i = 0; i < game.robots.jobs.length; i++) {
             var row = game.robots.jobs[i];
             document.getElementById('robotRow'+i+'Workers').innerHTML = row.workers;
