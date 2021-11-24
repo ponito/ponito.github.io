@@ -137,7 +137,7 @@ function Robots() {
         },
         { //Build Mines
             currentTicks: 0,
-            ticksNeeded: 300,
+            ticksNeeded: 1000,
             workers:0,
             cost:[1],
             costType:["wood"],
@@ -157,7 +157,7 @@ function Robots() {
         },
         { //Turn ore into dirt
             currentTicks: 0,
-            ticksNeeded: 1000,
+            ticksNeeded: 100,
             workers:0,
             during:function() {
                 if(game.power >= 1 * this.workers && game.robots.ore >= this.workers * 1000) {
@@ -167,7 +167,7 @@ function Robots() {
                 }
                 return false;
             },
-            finish: function() { game.land.addLand(50); },
+            finish: function() { game.land.addLand(5); },
             showing: function() { return game.energy.unlocked; }
         }
     ];
