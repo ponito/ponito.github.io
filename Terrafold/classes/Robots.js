@@ -141,7 +141,7 @@ function Robots() {
             workers:0,
             cost:[1],
             costType:["wood"],
-            finish: function () { game.robots.mines++; this.cost[0] = precision3(1 + .2 * this.completions; },
+            finish: function () { game.robots.mines++; this.cost[0] = precision3(1 + .2 * this.completions); },
             done: function() { return game.robots.mines*1000 >= game.land.optimizedLand; },
             showing: function() { return true; }
         },
