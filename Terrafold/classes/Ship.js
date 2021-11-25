@@ -10,7 +10,8 @@ function Ship(name, amount, foodAmount) {
     this.actionSpeed = 40;
     this.actionCounter = 0;
     this.energy = 0;
-    this.speed = .5;
+    //this.speed = .5;
+    this.speed = 50;
 
     this.tick = function() {
         this.checkEmpty();
