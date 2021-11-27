@@ -1,9 +1,11 @@
 {
   "ExpandedNodes": [
     "",
+    "\\IncrementalRPG",
+    "\\IncrementalRPG\\res",
     "\\Terrafold",
-    "\\Terrafold\\classes"
+    "\\Xianxia\\classes"
   ],
-  "SelectedNode": "\\Terrafold\\classes\\Planet.js",
+  "SelectedNode": "\\Terrafold\\stylesheet.css",
   "PreviewInSolutionExplorer": false
 }
