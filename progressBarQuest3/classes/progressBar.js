@@ -83,7 +83,8 @@ function ProgressBar(scope, initialProgressReq, initialProgress, gainAmount, row
         this.exp += scope.expMult*Math.pow(10, this.speedReduceMult-1); //EXP GAIN
         while(this.exp >= this.expToNextLevel) {
             this.exp -= this.expToNextLevel;
-            this.expToNextLevel = Math.floor(Math.pow(1.2, ++this.level)); //EXP REQUIREMENTS
+            this.level++;
+            this.expToNextLevel *= 1.2; //EXP REQUIREMENTS
             this.color = colorShiftMath(this.initialColorHue, this.level, 0); //color based on level
             this.totalBoostTicks += secondsLevelBoost * (1000/ msWaitTime);
             this.calcSpeedMult();
