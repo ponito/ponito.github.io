@@ -9,8 +9,8 @@ function GlobalButtons(scope) {
         })};
     this.buySecondsBoost = function() { //Seconds of Boost on Levelup
         buyButtonClicked(getLastRow(), scope.costSecondsBoost, function() {
-            scope.costSecondsBoost = Math.ceil(1.5* scope.costSecondsBoost);
-            scope.secondsLevelBoost++;
+            scope.costSecondsBoost = Math.ceil(5* scope.costSecondsBoost);
+            scope.secondsLevelBoost += 5;
         })};
     this.buyProgressBar = function() { //Buy Progress Bar
         buyButtonClicked(getLastRow(), scope.costBuyRow, function() {

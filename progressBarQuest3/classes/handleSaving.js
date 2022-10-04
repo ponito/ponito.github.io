@@ -66,7 +66,7 @@ function SaveGame(scope) {
         progressBarContainer.innerHTML = "";
 
         scope.boughtSpeedBonus = 0;
-        scope.secondsLevelBoost = 1;
+        scope.secondsLevelBoost = 5;
         scope.gainFirst = 20;
         scope.gainAll = 1;
         scope.expMult = 1;
