@@ -33,7 +33,7 @@ function GlobalButtons(scope) {
         })};
     this.buyExpMult = function() { //Exp Mult
         buyButtonClicked(getLastRow(), scope.costExpMult, function() {
-            scope.costExpMult = Math.ceil(7 * scope.costExpMult);
+            scope.costExpMult = Math.ceil(6 * scope.costExpMult);
             scope.expMult += 1;
             for(var x = 0; x < scope.pbars.length; x++) {
                 //scope.pbars[x].expGain++;
