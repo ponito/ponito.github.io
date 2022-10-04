@@ -14,7 +14,7 @@ function GlobalButtons(scope) {
         })};
     this.buyProgressBar = function() { //Buy Progress Bar
         buyButtonClicked(getLastRow(), scope.costBuyRow, function() {
-            scope.costBuyRow = Math.ceil(2.5 * scope.costBuyRow);
+            scope.costBuyRow = Math.ceil(2 * scope.costBuyRow);
             initialRowCount += 1;
         })};
     this.buyGainFirst = function() { //Gain for First
