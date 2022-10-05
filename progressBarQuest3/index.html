@@ -116,14 +116,14 @@ app.controller('myCtrl', function($scope, $interval, $compile) {
                     onePercent = 0.9 * ($scope.pbars[row].gainedSinceLast + resourceGain);
 
                 //console.log(onePercent);
-                $scope.pbars[row+1].resGainOpacity = 1;
-                $scope.pbars[row+1].tempResGain = onePercent;
-                $scope.pbars[row+1].resources += onePercent;
-                $scope.pbars[row+1].gainedSinceLast += onePercent;
+                $scope.pbars[row + 1].resGainOpacity = 1;
+                $scope.pbars[row + 1].tempResGain = onePercent;
+                $scope.pbars[row + 1].resources += onePercent;
+                $scope.pbars[row + 1].gainedSinceLast += onePercent;
                 $scope.pbars[row].resources -= onePercent;
                 $scope.pbars[row].tempResGain = (resourceGain - onePercent);
 
-                $scope.pbars[row+1].handleResourceChange();
+                $scope.pbars[row + 1].handleResourceChange();
 
                 //$scope.pbars[row+1].speedGain = 1 * Math.pow(10, $scope.pbars[row].speedReduceMult-1); //($scope.pbars[row].level) * .05
                 //$scope.pbars[row+1].speedMult = $scope.pbars[row+1].speedGain + $scope.pbars[row+1].speedMult;
