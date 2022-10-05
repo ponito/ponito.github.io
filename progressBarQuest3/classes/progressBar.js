@@ -117,7 +117,7 @@ function ProgressBar(scope, initialProgressReq, initialProgress, gainAmount, row
         if(this.resources >= gainCost) {
             this.resources -= gainCost;
             this.gainBought++;
-            this.resGain++;
+            this.resGain += scope.gainAllMul;
             this.calcTotalResGain();
             this.handleResourceChange();
         }
