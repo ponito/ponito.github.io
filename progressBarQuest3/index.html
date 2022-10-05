@@ -106,9 +106,12 @@ app.controller('myCtrl', function($scope, $interval, $compile) {
             $scope.pbars[row].resGainOpacity = 1;
             $scope.pbars[row].resources += resourceGain;
             $scope.pbars[row].tempResGain = resourceGain;
-            if(row < lastIndex) { //all but the bottom-most row
-                var onePercentGrid = [.01, 0.0956179249911957, 0.6339676587267711, 0.9999568287525893, 1,1,1,1,1,1,1,1,1,1,1,1];
-                var onePercent = Math.floor($scope.pbars[row].resources * onePercentGrid[$scope.pbars[row].speedReduceMult-1] * 10)/10;
+            if (row < lastIndex) { //all but the bottom-most row
+                let restPerTen = Math.pow(0.99, 10);
+                let restPercentage = Math.pow(restPerTen, $scope.pbars[row].speedReduceMult - 1);
+                var onePercent = 0.01;
+                if (restPercentage < 1)
+                    onePercent = Math.floor((1 - restPercentage) * 10) / 10;
                 //console.log(onePercent);
                 $scope.pbars[row+1].resGainOpacity = 1;
                 $scope.pbars[row+1].tempResGain = onePercent;
