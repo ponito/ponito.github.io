@@ -80,8 +80,8 @@ function SaveGame(scope) {
         scope.costBuyRow = 16;
         scope.costGainFirst = 8;
         scope.costGainAll = 100;
-        scope.costGainAllMul = 1000;
         scope.costExpMult = 5000;
+        scope.costGainAllMul = 1000000;
         initialRowCount = 4
     }
 }
