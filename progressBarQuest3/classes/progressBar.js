@@ -28,6 +28,7 @@ function ProgressBar(scope, initialProgressReq, initialProgress, gainAmount, row
 
     this.speedInitialCost = 125;
     this.speedBought = 0;
+    this.gainedSinceLast = 0;
     this.totalResGain = gainAmount;
 
     this.gainInitialCost = 3;

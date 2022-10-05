@@ -111,10 +111,15 @@ app.controller('myCtrl', function($scope, $interval, $compile) {
                 for (let i = 0; i < $scope.pbars[row].speedReduceMult - 1; i++)
                     restPercentage = Math.pow(restPercentage, 10);
                 onePercent = Math.floor($scope.pbars[row].resources * (1 - restPercentage) * 10) / 10;
+
+                if (onePercent > $scope.pbars[row].gainedSinceLast + 0.99 * resourceGain)
+                    onePercent = $scope.pbars[row].gainedSinceLast + 0.99 * resourceGain;
+
                 //console.log(onePercent);
                 $scope.pbars[row+1].resGainOpacity = 1;
                 $scope.pbars[row+1].tempResGain = onePercent;
                 $scope.pbars[row+1].resources += onePercent;
+                $scope.pbars[row+1].gainedSinceLast += onePercent;
                 $scope.pbars[row].resources -= onePercent;
                 $scope.pbars[row].tempResGain = (resourceGain - onePercent);
 
@@ -123,6 +128,7 @@ app.controller('myCtrl', function($scope, $interval, $compile) {
                 //$scope.pbars[row+1].speedGain = 1 * Math.pow(10, $scope.pbars[row].speedReduceMult-1); //($scope.pbars[row].level) * .05
                 //$scope.pbars[row+1].speedMult = $scope.pbars[row+1].speedGain + $scope.pbars[row+1].speedMult;
             }
+            $scope.pbars[row].gainedSinceLast = 0;
             $scope.pbars[row].handleResourceChange();
         });
     };
