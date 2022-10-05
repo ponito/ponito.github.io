@@ -112,8 +112,8 @@ app.controller('myCtrl', function($scope, $interval, $compile) {
                     restPercentage = Math.pow(restPercentage, 10);
                 onePercent = Math.floor($scope.pbars[row].resources * (1 - restPercentage) * 10) / 10;
 
-                if (onePercent > 0.99 * ($scope.pbars[row].gainedSinceLast + resourceGain))
-                    onePercent = 0.99 * ($scope.pbars[row].gainedSinceLast + resourceGain);
+                if (onePercent > 0.9 * ($scope.pbars[row].gainedSinceLast + resourceGain))
+                    onePercent = 0.9 * ($scope.pbars[row].gainedSinceLast + resourceGain);
 
                 //console.log(onePercent);
                 $scope.pbars[row+1].resGainOpacity = 1;
