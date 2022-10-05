@@ -8,12 +8,14 @@ function SaveGame(scope) {
         toSave.secondsLevelBoost = scope.secondsLevelBoost;
         toSave.gainFirst = scope.gainFirst;
         toSave.gainAll = scope.gainAll;
+        toSave.gainAllMul = scope.gainAllMul;
         toSave.expMult = scope.expMult;
         toSave.costSpeedBonus = scope.costSpeedBonus;
         toSave.costSecondsBoost = scope.costSecondsBoost;
         toSave.costBuyRow = scope.costBuyRow;
         toSave.costGainFirst = scope.costGainFirst;
         toSave.costGainAll = scope.costGainAll;
+        toSave.costGainAllMul = scope.costGainAllMul;
         toSave.costExpMult = scope.costExpMult;
         toSave.pbars = scope.pbars;
         toSave.selectedButton = selectedButton;
@@ -31,12 +33,14 @@ function SaveGame(scope) {
         scope.secondsLevelBoost = toLoad.secondsLevelBoost;
         scope.gainFirst = toLoad.gainFirst;
         scope.gainAll = toLoad.gainAll;
+        scope.gainAllMul = toLoad.gainAllMul;
         scope.expMult = toLoad.expMult;
         scope.costSpeedBonus = toLoad.costSpeedBonus;
         scope.costSecondsBoost = toLoad.costSecondsBoost;
         scope.costBuyRow = toLoad.costBuyRow;
         scope.costGainFirst = toLoad.costGainFirst;
         scope.costGainAll = toLoad.costGainAll;
+        scope.costGainAllMul = toLoad.costGainAllMul;
         scope.costExpMult = toLoad.costExpMult;
         scope.selectedButton = toLoad.selectedButton;
         scope.pbars = [];
@@ -69,12 +73,14 @@ function SaveGame(scope) {
         scope.secondsLevelBoost = 5;
         scope.gainFirst = 20;
         scope.gainAll = 1;
+        scope.gainAllMul = 1;
         scope.expMult = 1;
         scope.costSpeedBonus = 500;
         scope.costSecondsBoost = 100;
         scope.costBuyRow = 16;
         scope.costGainFirst = 8;
         scope.costGainAll = 100;
+        scope.costGainAllMul = 1000;
         scope.costExpMult = 5000;
         initialRowCount = 4
     }

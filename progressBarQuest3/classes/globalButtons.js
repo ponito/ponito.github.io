@@ -24,13 +24,24 @@ function GlobalButtons(scope) {
         })};
     this.buyGainAll = function() { //Gain for All
         buyButtonClicked(getLastRow(), scope.costGainAll, function() {
-            scope.costGainAll = Math.ceil(3 * scope.costGainAll);
+            scope.costGainAll = Math.ceil(4 * scope.costGainAll);
             scope.gainAll += 1; // + Math.floor($scope.gainAll * .2)
             for(var x = 0; x < scope.pbars.length; x++) {
-                scope.pbars[x].resGain++;
+                scope.pbars[x].resGain += scope.gainAllMul;
                 scope.pbars[x].calcTotalResGain();
             }
-        })};
+        })
+    };
+    this.buyGainAllMul = function () { //Gain for All
+        buyButtonClicked(getLastRow(), scope.costGainAllMul, function () {
+            scope.costGainAllMul = Math.ceil(1000 * scope.costGainAllMul);
+            scope.gainAllMul *= 2; // + Math.floor($scope.gainAll * .2)
+            for (var x = 0; x < scope.pbars.length; x++) {
+                scope.pbars[x].resGain *= 2;
+                scope.pbars[x].calcTotalResGain();
+            }
+        })
+    };
     this.buyExpMult = function() { //Exp Mult
         buyButtonClicked(getLastRow(), scope.costExpMult, function() {
             scope.costExpMult = Math.ceil(6 * scope.costExpMult);

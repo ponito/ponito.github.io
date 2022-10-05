@@ -279,6 +279,7 @@ app.controller('myCtrl', function($scope, $interval, $compile) {
     $scope.addBuyButtonTemplate("Buy Progress Bar", "pbars.length", "blue", "buyProgressBar", "costBuyRow", "white");
 //    $scope.addBuyButtonTemplate("Gain for Last", "pbars[pbars.length-1].resGain", "blue", "buyGainFirst", "costGainFirst", "white");
     $scope.addBuyButtonTemplate("Gain for All +1", "gainAll", "blue", "buyGainAll", "costGainAll", "white");
+    $scope.addBuyButtonTemplate("Gain for All x2", "gainAllMul", "blue", "buyGainAllMul", "costGainAllMul", "white");
     $scope.addBuyButtonTemplate("Exp Gain +1", "expMult", "blue", "buyExpMult", "costExpMult", "white");
 
     var buttons = new GlobalButtons($scope);
@@ -297,7 +298,7 @@ app.controller('myCtrl', function($scope, $interval, $compile) {
 
     $scope.addProgressBarData = function(type) {
         //progressBar (initialProgressReq, initialProgress, gainAmount, row) {
-        $scope.pbars.unshift(new ProgressBar ($scope, 20, 20, $scope.gainAll, $scope.pbars.length));
+        $scope.pbars.unshift(new ProgressBar ($scope, 20, 20, $scope.gainAll * $scope.gainAllMul, $scope.pbars.length));
         changeSelected([selectedButton[0]+1, selectedButton[1]]);
     };
 
