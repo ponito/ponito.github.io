@@ -109,9 +109,9 @@ app.controller('myCtrl', function($scope, $interval, $compile) {
             if (row < lastIndex) { //all but the bottom-most row
                 let restPerTen = Math.pow(0.99, 10);
                 let restPercentage = Math.pow(restPerTen, $scope.pbars[row].speedReduceMult - 1);
-                var onePercent = 0.01;
+                var onePercent = $scope.pbars[row].resources * 0.01;
                 if (restPercentage < 1)
-                    onePercent = Math.floor((1 - restPercentage) * 10) / 10;
+                    onePercent = Math.floor($scope.pbars[row].resources * (1 - restPercentage) * 10) / 10;
                 //console.log(onePercent);
                 $scope.pbars[row+1].resGainOpacity = 1;
                 $scope.pbars[row+1].tempResGain = onePercent;
