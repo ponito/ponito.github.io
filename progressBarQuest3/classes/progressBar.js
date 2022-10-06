@@ -168,15 +168,25 @@ function ProgressBar(scope, initialProgressReq, initialProgress, gainAmount, row
         if(this.resources instanceof String) {
             this.resources = 0;
         }
-        this.speedBuyable = this.resources >= this.calcSpeedCost();
-        this.gainBuyable = this.resources >= this.calcGainCost();
+        if (this.resources >= this.calcSpeedCost())
+            this.clickButtonByColumn(0);
+        if (this.resources >= this.calcGainCost())
+            this.clickButtonByColumn(1);
+        //this.speedBuyable = this.resources >= this.calcSpeedCost();
+        //this.gainBuyable = this.resources >= this.calcGainCost();
         for(var x = 0; x < this.gainMultAmount.length; x++) {
             if(x === 1 || x === 4 || x === 7 ) {
                 var rowNum = (scope.pbars.length - this.row)+x-1;
                 if(rowNum > 0) {
                     var pbar = scope.pbars[rowNum];
-                    if(pbar) {
-                        pbar["gainMultFrom"+x+"Buyable"] = this.resources >= pbar.calcGainMultCost(x);
+                    if (pbar) {
+                        if (x == 1 && this.resources >= pbar.calcGainMultCost(x))
+                            this.clickButtonByColumn(2);
+                        if (x == 4 && this.resources >= pbar.calcGainMultCost(x))
+                            this.clickButtonByColumn(3);
+                        if (x == 7 && this.resources >= pbar.calcGainMultCost(x))
+                            this.clickButtonByColumn(4);
+                        //pbar["gainMultFrom"+x+"Buyable"] = this.resources >= pbar.calcGainMultCost(x);
                     }
                 }
             }
